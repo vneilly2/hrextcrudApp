@@ -1,0 +1,54 @@
+
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+.container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.section {
+    padding-top: 10%;
+    padding-bottom: 10%;
+    
+}
+
+.form-box {
+    background: none;
+    padding: 0;
+}
+
+@media (min-width: 0px ) {
+    textarea {
+        outline: none;
+    }
+    .form-block {
+        width: 100%;
+        margin-top: 8px;
+    }
+}
+
+@media (min-width: 576px ) {
+    .container {
+        max-width: 540px;
+    }
+}
+
+@media (min-width: 768px ) {
+    .container {
+        max-width: 720px;
+    }
+}
+
+@media (min-width: 992px ) {
+    .container {
+        max-width: 960px;
+    }
+}
+@media (min-width: 1200px ) {
+    .container {
+        max-width: 1140px;
+    }
+}

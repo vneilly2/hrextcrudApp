@@ -1,6 +1,7 @@
 $(document).ready(function() {
     //get value in text field
-    const $userTextInput = $('#user-input-field');
+    const $snipTitle = $('#snip-title');
+    const $snipBlock = $('#snip-code');
     const $submitFormBtn = $('.submitForm');
     const $getStorageBtn = $('.getStorageData');
 
@@ -18,12 +19,19 @@ $(document).ready(function() {
             $('#data-container').append(storageEntry);
         }
     }
+    const snipDataObj = function(title, code) {
+        this.title = title;
+        this.code = code;
+        this.now = new Date();
+    }
 
-    $submitFormBtn.on('click', function() {
-        let userFormData = $userTextInput.val();
-        console.log(userFormData);
-        let storageId = $(this).attr('class');
-        localStorage.setItem(storageId, userFormData);
+    $submitFormBtn.on('click', function(e) {
+        e.preventDefault();
+        let storageId = $snipTitle.val();
+        let snipCode = $snipBlock.val();
+        let currentObj = new snipDataObj(storageId, snipCode);
+        localStorage.setItem(storageId, currentObj.code);
+        console.log(currentObj);
     });
 
     $getStorageBtn.on('click', function() {
