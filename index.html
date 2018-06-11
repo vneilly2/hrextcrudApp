@@ -6,11 +6,49 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>My First CRUD App</title>
     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
+    <link href="css/prism.css" rel="stylesheet" type="text/css">
     <link href="css/crud.css" rel="stylesheet" type="text/css">
 </head>
 <body>
     <div class="wrapper">
-        <header></header>
+        <header>
+            <div class="container">
+                <div id="my-logo">
+                    <a href="#" class="logo-image"><img src="images/snippysaver-logo.png" class="img-responsive" /></a>
+                </div>
+                <nav id="top-nav">
+                    <a href="#">Home</a>
+                    <a href="#">Add Snippet</a>
+                    <a href="#">View All</a>
+                    <div class="search-container">
+                        <form class="form-box">
+                            <div class="form-block">
+                                <span class="error"></span>
+                                <input id="search-input" class="" type="text" placeholder="Enter your Snippet Title" name="search">
+                                <button type="submit" class="searchSnippet" data-id="storage-search">
+                                    <i class="fas fa-search"></i>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </nav>
+            </div>
+        </header>
+        <!-- <section id="search" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h5>Enter 'Snippet Title' to search</h5>
+                    <h2>Search Snippets</h2>
+                </div>
+                <form class="form-box">
+                    <div class="form-block">
+                        <input id="search-input" class="" type="text" placeholder="Enter your Snippet Title" name="search">
+                        <button class="searchSnippet">Search</button>
+                    </div>
+                </form>
+            </div>
+        </section> -->
         <section class="section">
             <div class="container">
                 <div class="section-header">
@@ -24,13 +62,51 @@
                         <textarea id="snip-code" placeholder="Paste code snippet here." cols="25" rows="5"></textarea>
                     </div>
                     <div class="form-block">
-                        <button class="submitForm">Submit</button>
+                        <button class="submitForm">Add</button>
                         <button class="getStorageData">Get Text</button>
                     </div>
                 </form>
             </div>
         </section>
+        <section id="snippet-collection">
+            <div class="container">
+                <div class="section-header">
+                    <h2>My Snippet Collection</h2>
+                </div>
+                <div class="storage-item">
+                    <div class="content-card">
+                        <div class="card-top">
+                            <div class="storage-title">Title Xxxxx Xxxxx</div>
+                            <div class="actions">
+                                <span class="action-icon"><i class="fas fa-chevron-circle-down"></i></span>
+                                <span class="action-icon"><i class="far fa-edit"></i></span>
+                                <span class="action-icon"><i class="fas fa-trash"></i></span>
+                            </div>
+                        </div>
+                        <div class="card-bottom">
+                            <div class="storage-code">
+                                <pre class="">
+                                    <code class="language-css">const createStorageArray = function(trigger, func) {
+                                            let localStorageArray = Object.keys(window.localStorage);
+                                            //console.log(localStorageArray);
+                                            if (trigger === 'storage-search') {
+                                                //get user search term
+                                                let searchKey = $searchInput.val();
+                                                let currentSearch = func;
+                                                return currentSearch(searchKey);
+                                            }
+                                            
+                                        }
+                                    </code>
+                                </pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </div>
     <script src="js/crud.js"></script>
+    <script src="js/prism.js"></script>
 </body>
 </html>
